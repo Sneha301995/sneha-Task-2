@@ -1,0 +1,50 @@
+<div class="container">
+    <form>
+        <div class="row mr-4">
+            <div class="col-sm-6">
+                <div class="form-group p-5">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" class="form-control" id="FirstName">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group py-5">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" class="form-control" id="LastName">
+                </div>
+            </div>
+        </div>
+        <label for="" class="ml-5">How should we contact you?</label>
+        <div class="row ml-3">
+
+            <div class="form-check pr-3 ml-5 col-sm-2">
+                <input class="form-check-input" type="radio" name="phone" id="phone" value="phone"
+                    [(ngModel)]="selectedValue">
+                <label class="form-check-label" for="phone">
+                    Phone
+                </label>
+            </div>
+            <div class="form-check col-sm-3">
+                <input class="form-check-input" type="radio" name="email" id="email" value="email"
+                    [(ngModel)]="selectedValue">
+                <label class="form-check-label" for="email">
+                    Email
+                </label>
+            </div>
+
+
+            <div class="col-sm-6" *ngIf="selectedValue === 'phone'">
+                <div class="form-group ">
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" id="PhoneNumber" value="PhoneNumber">
+                </div>
+            </div>
+            <div class="col-sm-6" *ngIf="selectedValue === 'email'">
+                <div class="form-group ">
+                    <label for="Email">Email Address</label>
+                    <input type="text" class="form-control" id="Email" value="email">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
